@@ -8,5 +8,8 @@ export default {
   },
   breakpoint: {
     small: "@media(max-width: 1000px)",
+    project: "@media(max-width: 1300px)",
+    projectSmall: "@media(max-width: 700px)",
+    projectImage: "@media(max-width: 350px)",
   },
 }
