@@ -1,0 +1,16 @@
+{
+  "name": "cmwall.io",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "glamor": "^2.20.40",
+    "glamorous": "^4.11.0",
+    "next": "^4.1.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}
