@@ -6,4 +6,7 @@ export default {
     geyser: "#d1d9dc",
     heather: "#c4d0d9",
   },
+  breakpoint: {
+    small: "@media(max-width: 1000px)",
+  },
 }

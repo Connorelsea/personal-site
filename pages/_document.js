@@ -31,6 +31,7 @@ export default class MyDocument extends Document {
               body {
                 margin: 0;
                 font-family: San Francisco;
+                background-color: #F8F8F8;
               }
             `}
           </style>
