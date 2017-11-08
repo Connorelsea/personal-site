@@ -2,7 +2,14 @@ import React from "react"
 import glamorous from "glamorous"
 import { css } from "glamor"
 
-export default ({ children, ...props }) =>
+export default ({
+  children,
+  animation,
+  animationDelay,
+  animationDuration,
+  animationDelayOffset,
+  initialStyle,
+}) =>
   children
     ? React.Children.map(
         children,
@@ -13,9 +20,11 @@ export default ({ children, ...props }) =>
               ...child.props.style,
               ...animatorStyle(
                 index,
-                props.animationDuration,
-                props.animationDelayOffset,
-                props.animation
+                animation,
+                animationDelay,
+                animationDuration,
+                animationDelayOffset,
+                initialStyle
               ),
             },
           })
@@ -24,14 +33,16 @@ export default ({ children, ...props }) =>
 
 const animatorStyle = (
   index,
+  animation = defaultAnimation,
+  animationDelay = 0,
   animationDuration = 1,
   animationDelayOffset = 0.1,
-  animation = defaultAnimation
+  initialStyle = animation === defaultAnimation && { opacity: 0 }
 ) => ({
   animation: `${animation} ${animationDuration}s`,
-  animationDelay: `${index * animationDelayOffset}s`,
+  animationDelay: `${animationDelay + index * animationDelayOffset}s`,
   animationFillMode: "forwards",
-  opacity: 0,
+  ...initialStyle,
 })
 
 const defaultAnimation = css.keyframes("fadeIn", {
